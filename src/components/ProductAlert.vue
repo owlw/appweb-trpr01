@@ -1,3 +1,4 @@
+<!-- J'ai demandé un peu d'aide à ChatGPT pour les classes bootstrap -->
 <script setup lang="ts">
 import type { Product } from "../scripts/types";
 
