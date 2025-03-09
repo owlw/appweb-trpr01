@@ -58,7 +58,9 @@ const validateForm = () => {
     description: supplement.value.description.trim()
       ? ""
       : "La description est requise.",
-    flavor: "",
+    flavor: supplement.value.flavor.trim()
+      ? ""
+      : "La saveur du supplément est requise.",
   };
 
   return !Object.values(errors.value).some((error) => error !== "");
