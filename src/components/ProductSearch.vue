@@ -23,9 +23,6 @@ const updateSearch = () => {
         placeholder="Rechercher un supplément..."
         @input="updateSearch"
       />
-      <button class="btn btn-primary rounded-3" type="button">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </div>
 </template>

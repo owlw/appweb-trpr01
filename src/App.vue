@@ -10,6 +10,7 @@ import ProductSearch from "./components/ProductSearch.vue";
 import ProductAlert from "./components/ProductAlert.vue";
 import ProductForm from "./components/ProductForm.vue";
 import ProductDetails from "./components/ProductDetails.vue";
+import ProductExport from "./components/ProductExport.vue";
 
 const products = ref<Product[]>([
   {
@@ -152,14 +153,16 @@ const toggleForm = () => {
 
 <template>
   <StoreHeader />
+  <div class="content-wrapper pt-4 mt-4"></div>
   <ProductAlert :products="products" />
-
   <ProductSearch @search="handleSearch" />
   <div class="text-center mt-3 mb-4">
     <!-- J'ai demandé un peu d'aide à ChatGPT pour le toggle ici -->
     <button class="btn btn-success" @click="toggleForm">
       {{ showForm ? "Fermer le formulaire" : "Ajouter un supplément" }}
     </button>
+
+    <ProductExport :products="products" />
   </div>
   <ProductForm
     v-if="showForm"
@@ -180,5 +183,6 @@ const toggleForm = () => {
     @delete="deleteProduct"
     @view="(product) => (selectedProduct = product)"
   />
+  <div class="pb-5 mb-5"></div>
   <StoreFooter />
 </template>
